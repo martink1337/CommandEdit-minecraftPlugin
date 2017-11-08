@@ -1,0 +1,21 @@
+name: CommandEdit
+main: nl.pleduc.mc.CommandEdit.CommandEdit
+version: 1.0
+author: MartinK1337
+
+commands:
+  commandedit:
+    description: Base Command, this will show the help menu
+    usage: /commandedit ?
+    permission: commandedit.access
+    permission-message: You don't have the permission to use CommandEdit
+    
+permissions:
+   commandedit.*:
+     description: Gives access to all commandedit permissions
+     children:
+       commandedit.access: true
+       
+   commandedit.access:
+     description: Gives access to the menu of CommandEdit
+     default: op

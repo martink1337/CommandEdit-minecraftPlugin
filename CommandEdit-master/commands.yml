@@ -1,0 +1,43 @@
+# --------------------------------------------------------------------------------------- # 
+#                                                                                         #
+# CommandEdit by Patrick le Duc / KoffiePatje ( commands.yml )                            #
+#                                                                                         #
+# Define new aliases: /command = /alias | /alias | /alias                                 #
+#                                                                                         #
+# You can define a "variable" by putting it between brackets {Example} ( No $ sign )      #
+#                                                                                         #
+# Predefined variables                                                                    #
+# - {$PlayerName}   - returns the name of the player who executes the command             #
+# - {$DisplayName}  - returns the players display name                                    #
+# - {$WorldName}    - returns the name of the world the player is in                      #
+# - {$String}       - takes the last line of arguments as 1 string                        #
+#                                                                                         #
+# Function ( can only be used in the first variable )                                     #
+# - [ChatAs]    - {Player} {$String } - Chat as the target OP                             #
+# - [Message]   - {$String}           - Message the command executer                      #
+# - [KickSelf]  - {$String}           - Kicks the player with the given message           #
+# - [KickOther] - {Player} {$String}  - Kicks other player with the given message OP      #
+# - [KillSelf]  -                     - Kills the player                                  #
+# - [KillOther] - {Player}            - Kills the target player OP                        #
+#                                                                                         #
+# --------------------------------------------------------------------------------------- #
+commands:
+#   Time Functions
+  - /day = /time set 2000
+  - /noon = /time set 6000
+  - /night = /time set 18000
+#   Weather Functions
+  - /clear = /weather clear
+  - /rain = /weather rain
+  - /thunder = /weather thunder
+#   GameMode
+  - /gm {Mode} = /gamemode {Mode}
+#   Chat Commands
+  - /sayas {TargetPlayer} {$String} = [ChatAs] {TargetPlayer} {$String}
+#   Information Commands
+  - /care = [Message] You probably don't
+#   Kick Test
+  - /rq = [ChatAs] {$PlayerName} AAAARGGH!!! | [KickSelf] RAGEQUIT!!!!
+#   Kill Test
+  - /freeitems = [KillSelf]
+debugmode: true
